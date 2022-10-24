@@ -1,0 +1,14 @@
+name:pasoputi
+signal:いつも評価、閲覧、ブックマークありがとうございます。
+style:风景与人物的融合,音乐
+SNS:https://twitter.com/pasopuchi,https://kaitojp1000.wixsite.com/website
+
+name:しおん
+signal:絵を描いてます お仕事のご依頼ご相談等がございましたらこちらにご連絡下さい。
+style:女孩,风景,灰色
+SNS:https://twitter.com/shionnn_k
+
+name:ちふり
+signal:作品の閲覧・ブックマーク・評価・コメントなどをして下さり、いつも本当にありがとうございます！大変励みになります！
+style:废墟,百合,灰色
+SNS:https://twitter.com/4sakana5;https://4sakna5.wixsite.com/chihuri45
