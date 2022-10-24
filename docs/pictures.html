@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>插画列表</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		body {
+			background-color: lightgray;
+		}
+
+
+
+		#mainheader {
+			position: relative;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 60px;
+			background-color: #fff;
+			box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.3);
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		#mainlist {
+			width: 400px;
+			display: flex;
+			justify-content: space-between;
+			margin-left: 50px;
+		}
+
+		#actions {
+			width: 115px;
+			display: flex;
+			justify-content: space-between;
+			margin-right: 50px;
+		}
+
+		#mainheader font {
+			font-family: SourceHanSansCN-Medium;
+			font-size: 18px;
+			font-weight: 500;
+			line-height: 17px;
+			color: #3d3d3d;
+			cursor: pointer;
+		}
+
+		#mainheader font:hover {
+			color: #ff8200;
+		}
+
+		#picturelist {
+			width: 1400px;
+			margin: 30px auto;
+			background-color: #fff;
+			border-radius: 20px;
+		}
+
+		img {
+			width: 300px;
+			border-radius: 20px;
+			margin: 20px;
+			cursor: pointer;
+			transition: all 0.3s;
+		}
+
+		img:hover {
+			box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.5);
+		}
+	</style>
+</head>
+
+<body>
+	<div id="mainheader">
+		<div id="mainlist">
+			<font id="home">首页</font>
+			<font style="color: #ff8200" id="pictures">插画列表</font>
+			<font id="illustrator">画师列表</font>
+			<font id="collection">最近收藏</font>
+		</div>
+		<div id="actions">
+			<font id="post">上传</font>
+			<font id="search">搜索</font>
+		</div>
+	</div>
+
+	<div id="picturelist">
+		<img src="../img/pasoputi/1.jpg" alt="">
+		<img src="../img/pasoputi/2.jpg" alt="">
+		<img src="../img/pasoputi/3.jpg" alt="">
+		<img src="../img/pasoputi/4.jpg" alt="">
+		<img src="../img/pasoputi/5.jpg" alt="">
+		<img src="../img/pasoputi/6.jpg" alt="">
+		<img src="../img/pasoputi/7.jpg" alt="">
+		<img src="../img/pasoputi/8.jpg" alt="">
+
+		<img src="../img/しおん/1.jpg" alt="">
+		<img src="../img/しおん/2.jpg" alt="">
+		<img src="../img/しおん/3.jpg" alt="">
+		<img src="../img/しおん/4.jpg" alt="">
+		<img src="../img/しおん/5.jpg" alt="">
+		<img src="../img/しおん/6.jpg" alt="">
+		<img src="../img/しおん/7.jpg" alt="">
+		<img src="../img/しおん/8.jpg" alt="">
+
+		<img src="../img/ちふり/1.jpg" alt="">
+		<img src="../img/ちふり/2.jpg" alt="">
+		<img src="../img/ちふり/3.jpg" alt="">
+		<img src="../img/ちふり/4.jpg" alt="">
+		<img src="../img/ちふり/5.jpg" alt="">
+		<img src="../img/ちふり/6.jpg" alt="">
+		<img src="../img/ちふり/7.jpg" alt="">
+		<img src="../img/ちふり/8.jpg" alt="">
+	</div>
+</body>
+
+<script>
+	document.getElementById('home').addEventListener('click', function () {
+		window.open("home.html");
+	})
+	document.getElementById('pictures').addEventListener('click', function () {
+		window.open("pictures.html");
+	})
+	document.getElementById('illustrator').addEventListener('click', function () {
+		window.open("illustrator.html");
+	})
+	document.getElementById('collection').addEventListener('click', function () {
+		window.open("collection.html");
+	})
+	document.getElementById('post').addEventListener('click', function () {
+		window.open("post.html");
+	})
+	document.getElementById('search').addEventListener('click', function () {
+		window.open("search.html");
+	})
+	var imgArr = document.getElementsByTagName("img");
+	imgArr[0].addEventListener('click', function () {
+		window.open("picturedetails/pasoputi/1.html");
+	})
+	imgArr[1].addEventListener('click', function () {
+		window.open("picturedetails/pasoputi/2.html");
+	})
+</script>
+
+</html>

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>画师列表</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		body {
+			background-color: lightgray;
+		}
+
+		img {
+			max-width: 390px;
+			max-height: 350px;
+			cursor: pointer;
+			border-radius: 10px;
+		}
+
+		#mainheader {
+			position: relative;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 60px;
+			background-color: #fff;
+			box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.3);
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		#mainlist {
+			width: 400px;
+			display: flex;
+			justify-content: space-between;
+			margin-left: 50px;
+		}
+
+		#actions {
+			width: 115px;
+			display: flex;
+			justify-content: space-between;
+			margin-right: 50px;
+		}
+
+		#mainheader font {
+			font-family: SourceHanSansCN-Medium;
+			font-size: 18px;
+			font-weight: 500;
+			line-height: 17px;
+			color: #3d3d3d;
+			cursor: pointer;
+		}
+
+		#mainheader font:hover {
+			color: #ff8200;
+		}
+
+		#illustratorlist {
+			position: relative;
+			margin: 30px auto;
+			padding: 30px;
+			width: 1300px;
+			background-color: #fff;
+			border-radius: 50px;
+		}
+
+		#illustratoritem {
+			position: relative;
+			width: 1200px;
+			border-radius: 20px;
+			margin: 30px auto;
+			transition: all 0.3s;
+			padding: 20px;
+		}
+
+		#illustratoritem:hover {
+			box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.5);
+		}
+
+		#illustratorinfo {
+			display: flex;
+		}
+
+		.headphoto {
+			width: 100px;
+			height: 100px;
+			border-radius: 50%;
+			overflow: hidden;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		#details>* {
+			margin: 0 0 10px 30px;
+			font-family: SourceHanSansCN-Medium;
+			font-size: 18px;
+			font-weight: 500;
+			line-height: 18px;
+			color: #3d3d3d;
+		}
+
+		#picturelist {
+			width: 100%;
+			display: flex;
+			justify-content: space-between;
+		}
+
+		#name {
+			position: relative;
+			font-family: SourceHanSansCN-Medium;
+			font-size: 30px;
+			font-weight: bold;
+			line-height: 30px;
+			color: #3d3d3d;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="mainheader">
+		<div id="mainlist">
+			<font id="home">首页</font>
+			<font id="pictures">插画列表</font>
+			<font style="color: #ff8200" id="illustrator">画师列表</font>
+			<font id="collection">最近收藏</font>
+		</div>
+		<div id="actions">
+			<font id="post">上传</font>
+			<font id="search">搜索</font>
+		</div>
+	</div>
+
+	<div id="illustratorlist">
+		<div id="illustratoritem">
+			<div id="illustratorinfo">
+				<div class="headphoto">
+					<img src="../img/pasoputi/head_photo.png" alt="">
+				</div>
+				<div id="details">
+					<div id="name">
+						<font>pasoputi</font>
+					</div>
+					<div id="signal">
+						<font>いつも評価、閲覧、ブックマークありがとうございます。</font>
+					</div>
+					<div id="style">
+						<font>风格：<span>风景与人物的融合，音乐</span></font>
+					</div>
+					<div id="SNS">
+						<font>其他网站资讯：<a href="https://twitter.com/pasopuchi">https://twitter.com/pasopuchi</a>&nbsp;&nbsp;&nbsp;<a
+								href="https://kaitojp1000.wixsite.com/website">https://kaitojp1000.wixsite.com/website</a>
+						</font>
+					</div>
+				</div>
+			</div>
+			<div id="picturelist">
+				<img class="work" src="../img/pasoputi/1.jpg" alt="">
+				<img class="work" src="../img/pasoputi/2.jpg" alt="">
+				<img class="work" src="../img/pasoputi/3.jpg" alt="">
+				<img class="work" src="../img/pasoputi/4.jpg" alt="">
+				<img class="work" src="../img/pasoputi/5.jpg" alt="">
+			</div>
+		</div>
+		<hr>
+		<div id="illustratoritem">
+			<div id="illustratorinfo">
+				<div class="headphoto">
+					<img src="../img/ちふり/head_photo.png" alt="">
+				</div>
+				<div id="details">
+					<div id="name">
+						<font>ちふり</font>
+					</div>
+					<div id="signal">
+						<font>作品の閲覧・ブックマーク・評価・コメントなどをして下さり、いつも本当にありがとうございます！大変励みになります！</font>
+					</div>
+					<div id="style">
+						<font>风格：<span>废墟,百合,灰色</span></font>
+					</div>
+					<div id="SNS">
+						<font>其他网站资讯：<a href="https://twitter.com/4sakana5">https://twitter.com/4sakana5</a>&nbsp;&nbsp;&nbsp;<a
+								href="https://4sakna5.wixsite.com/chihuri45">https://4sakna5.wixsite.com/chihuri45</a>
+						</font>
+					</div>
+				</div>
+			</div>
+			<div id="picturelist">
+				<img class="work" src="../img/ちふり/1.jpg" alt="">
+				<img class="work" src="../img/ちふり/2.jpg" alt="">
+				<img class="work" src="../img/ちふり/3.jpg" alt="">
+			</div>
+		</div>
+		<hr>
+		<div id="illustratoritem">
+			<div id="illustratorinfo">
+				<div class="headphoto">
+					<img src="../img/しおん/head_photo.png" alt="">
+				</div>
+				<div id="details">
+					<div id="name">
+						<font>しおん</font>
+					</div>
+					<div id="signal">
+						<font>絵を描いてます お仕事のご依頼ご相談等がございましたらこちらにご連絡下さい。</font>
+					</div>
+					<div id="style">
+						<font>风格：<span>女孩,风景,灰色</span></font>
+					</div>
+					<div id="SNS">
+						<font>其他网站资讯：<a href="https://twitter.com/shionnn_k">https://twitter.com/shionnn_k</a>
+						</font>
+					</div>
+				</div>
+			</div>
+			<div id="picturelist">
+				<img class="work" src="../img/しおん/1.jpg" alt="">
+				<img class="work" src="../img/しおん/2.jpg" alt="">
+				<img class="work" src="../img/しおん/3.jpg" alt="">
+			</div>
+		</div>
+	</div>
+</body>
+
+<script>
+
+	// header的各个导航按钮跳转页面
+	document.getElementById('home').addEventListener('click', function () {
+		window.open("home.html");
+	})
+	document.getElementById('pictures').addEventListener('click', function () {
+		window.open("pictures.html");
+	})
+	document.getElementById('illustrator').addEventListener('click', function () {
+		window.open("illustrator.html");
+	})
+	document.getElementById('collection').addEventListener('click', function () {
+		window.open("collection.html");
+	})
+	document.getElementById('post').addEventListener('click', function () {
+		window.open("post.html");
+	})
+	document.getElementById('search').addEventListener('click', function () {
+		window.open("search.html");
+	})
+
+	// 点击图片，进入相应的详情页
+	var imgArr = document.getElementsByClassName("work");
+	// console.log(imgArr)
+	imgArr[0].addEventListener('click', function () {
+		window.open("picturedetails/pasoputi/1.html");
+	})
+	imgArr[1].addEventListener('click', function () {
+		window.open("picturedetails/pasoputi/2.html");
+	})
+	// 点击画师头像，进入其主介绍页面
+	var illustratorArr = document.getElementsByClassName("headphoto");
+	// console.log(illustratorArr);
+	illustratorArr[0].addEventListener('click', function () {
+		window.open("illustratordetails/pasoputi.html");
+	})
+	illustratorArr[1].addEventListener('click', function () {
+		window.open("illustratordetails/ちふり.html");
+	})
+	illustratorArr[2].addEventListener('click', function () {
+		window.open("illustratordetails/しおん.html");
+	})
+</script>
+
+</html>
