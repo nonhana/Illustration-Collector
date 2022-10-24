@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>主页</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		body {
+			background-color: lightgray;
+		}
+
+		#mainheader {
+			position: relative;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 60px;
+			background-color: #fff;
+			box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.3);
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		#mainlist {
+			width: 400px;
+			display: flex;
+			justify-content: space-between;
+			margin-left: 50px;
+		}
+
+		#actions {
+			width: 115px;
+			display: flex;
+			justify-content: space-between;
+			margin-right: 50px;
+		}
+
+		#mainheader font {
+			font-family: SourceHanSansCN-Medium;
+			font-size: 18px;
+			font-weight: 500;
+			line-height: 17px;
+			color: #3d3d3d;
+			cursor: pointer;
+		}
+
+		#mainheader font:hover {
+			color: #ff8200;
+		}
+
+		#title {
+			position: relative;
+			width: 250px;
+			height: 40px;
+			margin-top: 30px;
+			left: 230px;
+			background-color: #fff;
+			border-radius: 10px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		#title font {
+			font-family: SourceHanSansCN-Medium;
+			font-size: 18px;
+			font-weight: 500;
+			line-height: 17px;
+			color: #3d3d3d;
+		}
+
+		#outer {
+			/*设置长宽*/
+			width: 1220px;
+			height: 600px;
+			/*居中显示(应用margin的auto属性)*/
+			margin: 30px auto;
+			/*设置背景颜色*/
+			background-color: #fff;
+			/*设置padding*/
+			padding: 10px 0;
+			/*因为其子元素开启了绝对定位，父元素开启相对定位，从而实现动画效果*/
+			position: relative;
+			/* 裁剪溢出的内容 */
+			overflow: hidden;
+			border-radius: 20px;
+		}
+
+		#imgList {
+			/*去除项目符号*/
+			list-style: none;
+			/*开启绝对定位，用于移动图片们(凡是要设置位置、移动的东西，都得开启绝对定位)*/
+			position: absolute;
+			/*设置偏移量*/
+			left: 0px;
+		}
+
+		#imgList li {
+			/*将竖着排的图片横过来*/
+			float: left;
+			/*设置左右的外间距，隔开元素与元素*/
+			margin: 0 10px;
+		}
+
+		#navDiv {
+			/* 开启绝对定位 */
+			position: absolute;
+			/* 设置底部的位置 */
+			bottom: 15px;
+		}
+
+		#navDiv a {
+			/* 设置超链接浮动，横向排列 */
+			float: left;
+			/* 设置宽高 */
+			width: 15px;
+			height: 15px;
+			/* 设置颜色 */
+			background-color: white;
+			/* 设置左右外边距，元素与元素之间互不干扰 */
+			margin: 0 5px;
+			/* 设置透明度 */
+			opacity: 0.5;
+		}
+
+		/* 设置鼠标移到按钮上的效果，hover相当于一个事件 */
+		#navDiv a:hover {
+			background-color: black;
+		}
+
+		#illustrator_list {
+			position: relative;
+			width: 1300px;
+			margin: 30px auto;
+			background-color: #fff;
+			padding: 10px 0;
+			border-radius: 40px;
+		}
+
+		#second_title {
+			font-family: SourceHanSansCN-Medium;
+			font-size: 30px;
+			font-weight: bold;
+			line-height: 30px;
+			color: #3d3d3d;
+			margin: 20px 0 20px 100px
+		}
+
+		#illustrator_item {
+			position: relative;
+			width: 420px;
+			height: 260px;
+			background-color: #a5a5a5;
+			border-radius: 10px;
+			margin-right: 10px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		#illustrator_item>* {
+			margin-left: 10px;
+		}
+
+		#illustrator_item font {
+			font-family: SourceHanSansCN-Medium;
+			font-size: 20px;
+			font-weight: 500;
+			line-height: 28px;
+			color: #3d3d3d;
+		}
+
+		#illustrator_item img {
+			cursor: pointer;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="mainheader">
+		<div id="mainlist">
+			<font style="color: #ff8200" id="home">首页</font>
+			<font id="pictures">插画列表</font>
+			<font id="illustrator">画师列表</font>
+			<font id="collection">最近收藏</font>
+		</div>
+		<div id="actions">
+			<font id="post">上传</font>
+			<font id="search">搜索</font>
+		</div>
+	</div>
+
+	<div id="illustrator1">
+		<div id="title">
+			<font>目前展示作品画师：ちふり</font>
+		</div>
+		<!--outer相当于一个box，是ul的基底，跟ps中的图层概念很像-->
+		<div id="outer">
+			<!-- ul为一个列表，一些需要整齐排列的元素都用这个(无论横向还是竖向)-->
+			<ul id="imgList">
+				<li><img src="../img/ちふり/1.jpg"></li>
+				<li><img src="../img/ちふり/2.jpg"></li>
+				<li><img src="../img/ちふり/3.jpg"></li>
+				<li><img src="../img/ちふり/4.jpg"></li>
+				<li><img src="../img/ちふり/5.jpg"></li>
+				<li><img src="../img/ちふり/6.jpg"></li>
+				<li><img src="../img/ちふり/7.jpg"></li>
+				<li><img src="../img/ちふり/8.jpg"></li>
+			</ul>
+			<!-- 创建导航按钮，用户点击可以切换图片 -->
+			<div id="navDiv">
+				<a href="javascript:;"></a>
+				<a href="javascript:;"></a>
+				<a href="javascript:;"></a>
+				<a href="javascript:;"></a>
+				<a href="javascript:;"></a>
+				<a href="javascript:;"></a>
+				<a href="javascript:;"></a>
+				<a href="javascript:;"></a>
+			</div>
+		</div>
+	</div>
+
+	<div id="illustrator2">
+		<div id="title">
+			<font>目前展示作品画师：しおん</font>
+		</div>
+		<!--outer相当于一个box，是ul的基底，跟ps中的图层概念很像-->
+		<div id="outer">
+			<!-- ul为一个列表，一些需要整齐排列的元素都用这个(无论横向还是竖向)-->
+			<ul id="imgList">
+				<li><img src="../img/しおん/1.jpg"></li>
+				<li><img src="../img/しおん/2.jpg"></li>
+				<li><img src="../img/しおん/3.jpg"></li>
+				<li><img src="../img/しおん/4.jpg"></li>
+				<li><img src="../img/しおん/5.jpg"></li>
+				<li><img src="../img/しおん/6.jpg"></li>
+				<li><img src="../img/しおん/7.jpg"></li>
+				<li><img src="../img/しおん/8.jpg"></li>
+			</ul>
+			<!-- 创建导航按钮，用户点击可以切换图片 -->
+			<div id="navDiv">
+				<a href="javascript:;"></a>
+				<a href="javascript:;"></a>
+				<a href="javascript:;"></a>
+				<a href="javascript:;"></a>
+				<a href="javascript:;"></a>
+				<a href="javascript:;"></a>
+				<a href="javascript:;"></a>
+				<a href="javascript:;"></a>
+			</div>
+		</div>
+	</div>
+
+	<div id="illustrator3">
+		<div id="title">
+			<font>目前展示作品画师：pasoputi</font>
+		</div>
+		<!--outer相当于一个box，是ul的基底，跟ps中的图层概念很像-->
+		<div id="outer">
+			<!-- ul为一个列表，一些需要整齐排列的元素都用这个(无论横向还是竖向)-->
+			<ul id="imgList">
+				<li><img src="../img/pasoputi/1.jpg"></li>
+				<li><img src="../img/pasoputi/2.jpg"></li>
+				<li><img src="../img/pasoputi/3.jpg"></li>
+				<li><img src="../img/pasoputi/4.jpg"></li>
+				<li><img src="../img/pasoputi/5.jpg"></li>
+				<li><img src="../img/pasoputi/6.jpg"></li>
+				<li><img src="../img/pasoputi/7.jpg"></li>
+				<li><img src="../img/pasoputi/8.jpg"></li>
+			</ul>
+			<!-- 创建导航按钮，用户点击可以切换图片 -->
+			<div id="navDiv">
+				<a href="javascript:;"></a>
+				<a href="javascript:;"></a>
+				<a href="javascript:;"></a>
+				<a href="javascript:;"></a>
+				<a href="javascript:;"></a>
+				<a href="javascript:;"></a>
+				<a href="javascript:;"></a>
+				<a href="javascript:;"></a>
+			</div>
+		</div>
+	</div>
+
+	<div id="illustrator_list">
+		<div id="second_title">
+			<font>收藏画师</font>
+		</div>
+		<div style="display: flex;margin: 10px 0 10px 20px ;">
+			<div id="illustrator_item">
+				<div>
+					<font>ちふり</font>
+					<img style="width: 400px;height: 200px;border-radius: 10px;" src="../img/ちふり/1.jpg" alt="">
+				</div>
+			</div>
+			<div id="illustrator_item">
+				<div>
+					<font>しおん</font>
+					<img style="width: 400px;height: 200px;border-radius: 10px;" src="../img/しおん/1.jpg" alt="">
+				</div>
+			</div>
+			<div id="illustrator_item">
+				<div>
+					<font>pasoputi</font>
+					<img style="width: 400px;height: 200px;border-radius: 10px;" src="../img/pasoputi/7.jpg" alt="">
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src="../js/tools.js"></script>
+<script type="text/javascript" src="../js/changepictures.js"></script>
+<script>
+	document.getElementById('home').addEventListener('click', function () {
+		window.open("home.html");
+	})
+	document.getElementById('pictures').addEventListener('click', function () {
+		window.open("docs/pictures.html");
+	})
+	document.getElementById('illustrator').addEventListener('click', function () {
+		window.open("docs/illustrator.html");
+	})
+	document.getElementById('collection').addEventListener('click', function () {
+		window.open("docs/collection.html");
+	})
+	document.getElementById('post').addEventListener('click', function () {
+		window.open("docs/post.html");
+	})
+	document.getElementById('search').addEventListener('click', function () {
+		window.open("docs/search.html");
+	})
+</script>
+
+</html>
