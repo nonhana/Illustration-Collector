@@ -5,122 +5,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>画师列表</title>
-  <style type="text/css">
-    * {
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      background-color: lightgray;
-    }
-
-    #mainheader {
-      position: relative;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 60px;
-      background-color: #fff;
-      box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.3);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    #mainlist {
-      width: 400px;
-      display: flex;
-      justify-content: space-between;
-      margin-left: 50px;
-    }
-
-    #actions {
-      width: 115px;
-      display: flex;
-      justify-content: space-between;
-      margin-right: 50px;
-    }
-
-    #mainheader font {
-      font-family: SourceHanSansCN-Medium;
-      font-size: 18px;
-      font-weight: 500;
-      line-height: 17px;
-      color: #3d3d3d;
-      cursor: pointer;
-    }
-
-    #mainheader font:hover {
-      color: #ff8200;
-    }
-
-    .illustrator_wrap {
-      position: relative;
-      margin: 30px auto;
-      padding: 30px;
-      border-radius: 50px;
-      width: 1300px;
-      background-color: #fff;
-    }
-
-    .headphoto {
-      width: 100%;
-      display: flex;
-      justify-content: center;
-    }
-
-    .headphoto>* {
-      width: 130px;
-      height: 130px;
-      border-radius: 50%;
-      overflow: hidden;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .headphoto img {
-      width: auto;
-      height: auto;
-    }
-
-    .infomation>* {
-      margin-bottom: 20px;
-      font-family: SourceHanSansCN-Medium;
-      font-size: 18px;
-      font-weight: 500;
-      line-height: 22px;
-      color: #3d3d3d;
-    }
-
-    .name {
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      font-family: SourceHanSansCN-Medium;
-      font-size: 30px;
-      font-weight: bold;
-      line-height: 30px;
-      color: #3d3d3d;
-    }
-
-    .picturelist {
-      width: 100%;
-    }
-
-    .picturelist>* {
-      width: 300px;
-      border-radius: 20px;
-      margin: 10px;
-      transition: all 0.3s;
-      cursor: pointer;
-    }
-
-    .picturelist>*:hover {
-      box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.5);
-    }
-  </style>
+  <link rel="stylesheet" href="../../css/header.css">
+  <link rel="stylesheet" href="../../css/illustratordetails.css">
 </head>
 
 <body>
@@ -200,7 +86,7 @@
 
   // header的各个导航按钮跳转页面
   document.getElementById('home').addEventListener('click', function () {
-    window.open("../home.html");
+    window.open("../../index.html");
   })
   document.getElementById('pictures').addEventListener('click', function () {
     window.open("../pictures.html");

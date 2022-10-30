@@ -11,4 +11,4 @@ SNS:https://twitter.com/shionnn_k
 name:ちふり
 signal:作品の閲覧・ブックマーク・評価・コメントなどをして下さり、いつも本当にありがとうございます！大変励みになります！
 style:废墟,百合,灰色
-SNS:https://twitter.com/4sakana5;https://4sakna5.wixsite.com/chihuri45
+SNS:https://twitter.com/4sakana5,https://4sakna5.wixsite.com/chihuri45

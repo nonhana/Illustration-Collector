@@ -1,0 +1,65 @@
+.illustrator_wrap {
+  position: relative;
+  margin: 30px auto;
+  padding: 30px;
+  border-radius: 50px;
+  width: 1300px;
+  background-color: #fff;
+}
+
+.headphoto {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.headphoto>* {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.headphoto img {
+  width: auto;
+  height: auto;
+}
+
+.infomation>* {
+  margin-bottom: 20px;
+  font-family: SourceHanSansCN-Medium;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 22px;
+  color: #3d3d3d;
+}
+
+.name {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  font-family: SourceHanSansCN-Medium;
+  font-size: 30px;
+  font-weight: bold;
+  line-height: 30px;
+  color: #3d3d3d;
+}
+
+.picturelist {
+  width: 100%;
+}
+
+.picturelist>* {
+  width: 300px;
+  border-radius: 20px;
+  margin: 10px;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.picturelist>*:hover {
+  box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.5);
+}
