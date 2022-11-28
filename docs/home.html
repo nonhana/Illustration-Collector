@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>主页</title>
+	<link rel="stylesheet" type="text/css" href="../css/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="../css/htmleaf-demo.css">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="../css/header.css">
+	<style type="text/css">
+		#illustrator_list {
+			position: relative;
+			width: 1300px;
+			margin: 30px auto;
+			background-color: #fff;
+			padding: 10px 0;
+			border-radius: 40px;
+		}
+
+		#second_title {
+			font-family: SourceHanSansCN-Medium;
+			font-size: 30px;
+			font-weight: bold;
+			line-height: 30px;
+			color: #3d3d3d;
+			margin: 20px 0 20px 100px
+		}
+
+		#illustrator_item {
+			position: relative;
+			width: 420px;
+			height: 260px;
+			background-color: #a5a5a5;
+			border-radius: 10px;
+			margin-right: 10px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		#illustrator_item>* {
+			margin-left: 10px;
+		}
+
+		#illustrator_item font {
+			font-family: SourceHanSansCN-Medium;
+			font-size: 20px;
+			font-weight: 500;
+			line-height: 28px;
+			color: #3d3d3d;
+		}
+
+		#illustrator_item img {
+			cursor: pointer;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="mainheader">
+		<div id="mainlist">
+			<font style="color: #ff8200" id="home">首页</font>
+			<font id="pictures">插画列表</font>
+			<font id="illustrator">画师列表</font>
+			<font id="collection">最近收藏</font>
+		</div>
+		<div id="actions">
+			<font id="post">上传</font>
+			<font id="search">搜索</font>
+		</div>
+	</div>
+
+
+	<div class="htmleaf-container">
+		<div id="wrapper">
+			<div id="slider-wrap">
+				<ul id="slider">
+					<li>
+						<i class="fa fa-image">
+							<img src="../img/ちふり/1.jpg" alt="">
+						</i>
+					</li>
+
+					<li>
+						<i class="fa fa-gears">
+							<img src="../img/ちふり/2.jpg" alt="">
+						</i>
+					</li>
+
+					<li>
+						<i class="fa fa-sliders">
+							<img src="../img/ちふり/2.jpg" alt="">
+						</i>
+					</li>
+
+					<li>
+						<i class="fa fa-code">
+							<img src="../img/ちふり/4.jpg" alt="">
+						</i>
+					</li>
+
+					<li>
+						<i class="fa fa-microphone-slash">
+							<img src="../img/ちふり/5.jpg" alt="">
+						</i>
+					</li>
+
+					<li>
+						<i class="fa fa-microphone-slash">
+							<img src="../img/ちふり/6.jpg" alt="">
+						</i>
+					</li>
+
+					<li>
+						<i class="fa fa-microphone-slash">
+							<img src="../img/ちふり/7.jpg" alt="">
+						</i>
+					</li>
+
+					<li>
+						<i class="fa fa-microphone-slash">
+							<img src="../img/ちふり/8.jpg" alt="">
+						</i>
+					</li>
+				</ul>
+
+				<div class="btns" id="next"><i class="fa fa-arrow-right"></i></div>
+				<div class="btns" id="previous"><i class="fa fa-arrow-left"></i></div>
+				<div id="counter"></div>
+
+				<div id="pagination-wrap">
+					<ul>
+					</ul>
+				</div>
+				<!--controls-->
+
+			</div>
+		</div>
+	</div>
+
+
+
+	<div id="illustrator_list">
+		<div id="second_title">
+			<font>收藏画师</font>
+		</div>
+		<div style="display: flex;margin: 10px 0 10px 20px ;">
+			<div id="illustrator_item">
+				<div>
+					<font>ちふり</font>
+					<img style="width: 400px;height: 200px;border-radius: 10px;" src="/img/ちふり/1.jpg" alt="">
+				</div>
+			</div>
+			<div id="illustrator_item">
+				<div>
+					<font>しおん</font>
+					<img style="width: 400px;height: 200px;border-radius: 10px;" src="/img/しおん/1.jpg" alt="">
+				</div>
+			</div>
+			<div id="illustrator_item">
+				<div>
+					<font>pasoputi</font>
+					<img style="width: 400px;height: 200px;border-radius: 10px;" src="/img/pasoputi/7.jpg" alt="">
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src="../js/tools.js"></script>
+<script type="text/javascript" src="../js/changepictures.js"></script>
+<script src="http://cdn.bootcss.com/jquery/1.11.0/jquery.min.js" type="text/javascript"></script>
+<script>window.jQuery || document.write('<script src="js/jquery-1.11.0.min.js"><\/script>')</script>
+<script type="text/javascript" src="../js/slide.js"></script>
+<script>
+	document.getElementById('home').addEventListener('click', function () {
+		window.open("index.html");
+	})
+	document.getElementById('pictures').addEventListener('click', function () {
+		window.open("pictures.html");
+	})
+	document.getElementById('illustrator').addEventListener('click', function () {
+		window.open("illustrator.html");
+	})
+	document.getElementById('collection').addEventListener('click', function () {
+		window.open("collection.html");
+	})
+	document.getElementById('post').addEventListener('click', function () {
+		window.open("post.html");
+	})
+	document.getElementById('search').addEventListener('click', function () {
+		window.open("search.html");
+	})
+</script>
+
+</html>
