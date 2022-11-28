@@ -7,6 +7,7 @@
   <title>插画列表</title>
   <link rel="stylesheet" href="../../../css/header.css">
   <link rel="stylesheet" href="../../../css/picturedetails.css">
+  <link rel="stylesheet" href="../../../css/comments.css">
 </head>
 
 <body>
@@ -54,9 +55,35 @@
       </div>
     </div>
   </div>
+
+  <div class="comments">
+    <div class="commentstitle">
+      <font>评论列表</font>
+    </div>
+    <div id="up">
+      <input type="text" placeholder="请输入您的姓名">
+      <input type="text" placeholder="请输入您的性别">
+      <input type="text" placeholder="请输入您的年龄">
+      <input type="text" placeholder="请输入您的评论内容">
+      <input type="button" value="添加">
+    </div>
+
+    <table id="tab">
+      <tr>
+        <td>姓名</td>
+        <td>性别</td>
+        <td>年龄</td>
+        <td>评论</td>
+        <td>操作</td>
+      </tr>
+    </table>
+
+  </div>
 </body>
 
 <script>
+
+  // 此处实现页面跳转
   document.getElementById('home').addEventListener('click', function () {
     window.open("../../home.html");
   })
@@ -76,5 +103,7 @@
     window.open("../../search.html");
   })
 </script>
+
+<script src="../../../js/comments.js"></script>
 
 </html>
