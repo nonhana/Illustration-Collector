@@ -25,10 +25,10 @@
 			font-weight: bold;
 			line-height: 30px;
 			color: #3d3d3d;
-			margin: 20px 0 20px 100px
+			margin: 20px 0 20px 70px
 		}
 
-		#illustrator_item {
+		.illustrator_item {
 			position: relative;
 			width: 420px;
 			height: 260px;
@@ -40,11 +40,11 @@
 			align-items: center;
 		}
 
-		#illustrator_item>* {
+		.illustrator_item>* {
 			margin-left: 10px;
 		}
 
-		#illustrator_item font {
+		.illustrator_item font {
 			font-family: SourceHanSansCN-Medium;
 			font-size: 20px;
 			font-weight: 500;
@@ -52,7 +52,7 @@
 			color: #3d3d3d;
 		}
 
-		#illustrator_item img {
+		.illustrator_item img {
 			cursor: pointer;
 		}
 	</style>
@@ -72,7 +72,6 @@
 		</div>
 	</div>
 
-
 	<div class="htmleaf-container">
 		<div id="wrapper">
 			<div id="slider-wrap">
@@ -91,7 +90,7 @@
 
 					<li>
 						<i class="fa fa-sliders">
-							<img src="../img/ちふり/2.jpg" alt="">
+							<img src="../img/ちふり/3.jpg" alt="">
 						</i>
 					</li>
 
@@ -140,26 +139,24 @@
 		</div>
 	</div>
 
-
-
 	<div id="illustrator_list">
 		<div id="second_title">
-			<font>收藏画师</font>
+			<font>目前收藏画师</font>
 		</div>
 		<div style="display: flex;margin: 10px 0 10px 20px ;">
-			<div id="illustrator_item">
+			<div class="illustrator_item">
 				<div>
 					<font>ちふり</font>
 					<img style="width: 400px;height: 200px;border-radius: 10px;" src="/img/ちふり/1.jpg" alt="">
 				</div>
 			</div>
-			<div id="illustrator_item">
+			<div class="illustrator_item">
 				<div>
 					<font>しおん</font>
 					<img style="width: 400px;height: 200px;border-radius: 10px;" src="/img/しおん/1.jpg" alt="">
 				</div>
 			</div>
-			<div id="illustrator_item">
+			<div class="illustrator_item">
 				<div>
 					<font>pasoputi</font>
 					<img style="width: 400px;height: 200px;border-radius: 10px;" src="/img/pasoputi/7.jpg" alt="">
@@ -175,7 +172,7 @@
 <script type="text/javascript" src="../js/slide.js"></script>
 <script>
 	document.getElementById('home').addEventListener('click', function () {
-		window.open("index.html");
+		window.open("home.html");
 	})
 	document.getElementById('pictures').addEventListener('click', function () {
 		window.open("pictures.html");
@@ -191,6 +188,19 @@
 	})
 	document.getElementById('search').addEventListener('click', function () {
 		window.open("search.html");
+	})
+
+	// 绑定图片点击事件
+	var illustrator_list = document.getElementsByClassName('illustrator_item');
+	console.log(illustrator_list);
+	illustrator_list[0].addEventListener('click', function () {
+		window.open("illustratordetails/ちふり.html");
+	})
+	illustrator_list[1].addEventListener('click', function () {
+		window.open("illustratordetails/しおん.html");
+	})
+	illustrator_list[2].addEventListener('click', function () {
+		window.open("illustratordetails/pasoputi.html");
 	})
 </script>
 
