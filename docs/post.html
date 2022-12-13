@@ -212,6 +212,7 @@
 	</div>
 </body>
 
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script>
 	document.getElementById('home').addEventListener('click', function () {
 		window.open("home.html");
@@ -264,12 +265,6 @@
 			}
 		}
 		if (flag == 0) {
-			var illustratorlist = [];
-			if (localStorage.getItem("illustratorlist")) {
-				for (var i = 0; i < JSON.parse(localStorage.getItem("illustratorlist")).length; i++) {
-					illustratorlist.push(JSON.parse(localStorage.getItem("illustratorlist"))[i]);
-				}
-			}
 			submit_illustrator_form.illustrator_name = illustrator_form[0].value;
 			submit_illustrator_form.illustrator_sign = illustrator_form[1].value;
 			submit_illustrator_form.illustrator_style = illustrator_form[2].value;
@@ -282,14 +277,20 @@
 			// 注意：只能在onload函数中运用this.result将转化好的编码进行赋值！一旦离开onload函数则失效
 			reader.onload = function () {
 				submit_illustrator_form.illustrator_head_photo = this.result;
-				illustratorlist.push(submit_illustrator_form);
-				localStorage.setItem("illustratorlist", JSON.stringify(illustratorlist));
+				axios({
+					url: "http://localhost:8100/illustratorlist",
+					method: 'POST',
+					data: submit_illustrator_form,
+				}).then(function (res) {
+					alert("上传成功")
+				});
 			}
 		} else {
 			alert("添加画师的资料尚未填充完整！")
 		}
 	})
 
+	// 上传插画
 	document.getElementById('submitpicture').addEventListener('click', function () {
 		var picture_form = document.getElementById('picture_postform').getElementsByTagName('input');
 		var submit_picture_form = {
@@ -309,12 +310,6 @@
 			}
 		}
 		if (flag == 0) {
-			var picturelist = [];
-			if (localStorage.getItem("picturelist")) {
-				for (var i = 0; i < JSON.parse(localStorage.getItem("picturelist")).length; i++) {
-					picturelist.push(JSON.parse(localStorage.getItem("picturelist"))[i]);
-				}
-			}
 			submit_picture_form.picture_name = picture_form[0].value;
 			submit_picture_form.picture_labels = picture_form[1].value;
 			submit_picture_form.picture_creator = picture_form[2].value;
@@ -327,8 +322,13 @@
 			// 注意：只能在onload函数中运用this.result将转化好的编码进行赋值！一旦离开onload函数则失效
 			reader.onload = function () {
 				submit_picture_form.picture_head_photo = this.result;
-				picturelist.push(submit_picture_form);
-				localStorage.setItem("picturelist", JSON.stringify(picture_form));
+				axios({
+					url: "http://localhost:8100/picturelist",
+					method: 'POST',
+					data: submit_picture_form,
+				}).then(function (res) {
+					alert("上传成功")
+				});
 			}
 		} else {
 			alert("添加插画的资料尚未填充完整！")
