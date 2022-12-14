@@ -108,26 +108,23 @@
 		window.open("picturedetails/pasoputi/5.html");
 	})
 
-	// for (i = 0; i < imgArr.length; i++) {
-	// 	try {
-	// 		let reader = new FileReader();
-	// 		reader.readAsDataURL(imgArr[i].src);
-	// 		reader.onload = function (e) {
-	// 			if (callback) {
-	// 				let base64Str = e.target.result;
-	// 				console.log(base64Str);
-	// 				callback(base64Str);
-	// 			}
-	// 		};
-	// 	} catch (error) {
-	// 		console.error(error);
-	// 		if (errorCallback) {
-	// 			errorCallback(error);
-	// 		}
-	// 	}
-		// console.log(imgArr[i].src);
-
-
+	// 读取本地上传的图片数据，添加到列表内
+	var picturelist = document.getElementById("picturelist");
+	var localpictureArr = [];
+	if (localStorage.getItem("picturelist")) {
+		for (var i = 0; i < JSON.parse(localStorage.getItem("picturelist")).length; i++) {
+			localpictureArr.push(JSON.parse(localStorage.getItem("picturelist"))[i]);
+		}
+	}
+	for (var i = 0; i < localpictureArr.length; i++) {
+		var str = "";
+		str = "<img class='uploadpicture' src='' alt=''>"
+		picturelist.innerHTML += str;
+	}
+	var uploadpictureArr = document.getElementsByClassName("uploadpicture")
+	for (var i = 0; i < uploadpictureArr.length; i++) {
+		uploadpictureArr[i].src = localpictureArr[i].picture_file;
+	}
 </script>
 
 </html>

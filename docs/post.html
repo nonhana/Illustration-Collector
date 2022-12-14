@@ -249,6 +249,7 @@
 	document.getElementById('submitillustrator').addEventListener('click', function () {
 		var illustrator_form = document.getElementById('illustrator_postform').getElementsByTagName('input');
 		var submit_illustrator_form = {
+			illustrator_id: 1,
 			illustrator_name: "",
 			illustrator_sign: "",
 			illustrator_style: "",
@@ -277,13 +278,36 @@
 			// 注意：只能在onload函数中运用this.result将转化好的编码进行赋值！一旦离开onload函数则失效
 			reader.onload = function () {
 				submit_illustrator_form.illustrator_head_photo = this.result;
-				axios({
-					url: "http://localhost:8100/illustratorlist",
-					method: 'POST',
-					data: submit_illustrator_form,
-				}).then(function (res) {
-					alert("上传成功")
-				});
+				// 通过axios上传
+				// axios({
+				// 	url: "http://localhost:8100/illustratorlist",
+				// 	method: 'POST',
+				// 	data: submit_illustrator_form,
+				// }).then(function (res) {
+				// 	alert("上传成功")
+				// });
+				// 将数据存入本地，让远程能够实现读取
+				let illustrator_list = [];
+				if (localStorage.getItem("illustratorlist")) {
+					for (var i = 0; i < JSON.parse(localStorage.getItem("illustratorlist")).length; i++) {
+						submit_illustrator_form.illustrator_id++;
+						illustrator_list.push(JSON.parse(localStorage.getItem("illustratorlist"))[i]);
+					}
+				}
+				illustrator_list.push(submit_illustrator_form);
+				localStorage.setItem("illustratorlist", JSON.stringify(illustrator_list));
+				alert("上传成功")
+				// 成功后重置表单
+				submit_illustrator_form = {
+					illustrator_id: 1,
+					illustrator_name: "",
+					illustrator_sign: "",
+					illustrator_style: "",
+					illustrator_SNS: "",
+					illustrator_reason: "",
+					illustrator_story: "",
+					illustrator_head_photo: "",
+				}
 			}
 		} else {
 			alert("添加画师的资料尚未填充完整！")
@@ -294,6 +318,7 @@
 	document.getElementById('submitpicture').addEventListener('click', function () {
 		var picture_form = document.getElementById('picture_postform').getElementsByTagName('input');
 		var submit_picture_form = {
+			picture_id: 1,
 			picture_name: "",
 			picture_labels: "",
 			picture_creator: "",
@@ -321,14 +346,37 @@
 			reader.readAsDataURL(picture_form[6].files[0]);//进行转化
 			// 注意：只能在onload函数中运用this.result将转化好的编码进行赋值！一旦离开onload函数则失效
 			reader.onload = function () {
-				submit_picture_form.picture_head_photo = this.result;
-				axios({
-					url: "http://localhost:8100/picturelist",
-					method: 'POST',
-					data: submit_picture_form,
-				}).then(function (res) {
-					alert("上传成功")
-				});
+				submit_picture_form.picture_file = this.result;
+				// 通过axios将数据存入data
+				// axios({
+				// 	url: "http://localhost:8100/picturelist",
+				// 	method: 'POST',
+				// 	data: submit_picture_form,
+				// }).then(function (res) {
+				// 	alert("上传成功")
+				// });
+				// 将数据存入本地，让远程能够实现读取
+				let picture_list = [];
+				if (localStorage.getItem("picturelist")) {
+					for (var i = 0; i < JSON.parse(localStorage.getItem("picturelist")).length; i++) {
+						submit_picture_form.picture_id++;
+						picture_list.push(JSON.parse(localStorage.getItem("picturelist"))[i]);
+					}
+				}
+				picture_list.push(submit_picture_form);
+				localStorage.setItem("picturelist", JSON.stringify(picture_list));
+				alert("上传成功")
+				// 成功后重置表单
+				submit_picture_form = {
+					picture_id: 1,
+					picture_name: "",
+					picture_labels: "",
+					picture_creator: "",
+					picture_origin: "",
+					picture_time: "",
+					picture_reason: "",
+					picture_file: "",
+				}
 			}
 		} else {
 			alert("添加插画的资料尚未填充完整！")
