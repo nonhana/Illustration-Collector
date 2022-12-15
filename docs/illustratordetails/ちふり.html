@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>画师列表</title>
+  <link rel="stylesheet" href="../../css/header.css">
+  <link rel="stylesheet" href="../../css/illustratordetails.css">
+</head>
+
+<body>
+  <div id="mainheader">
+    <div id="mainlist">
+      <font id="home">首页</font>
+      <font id="pictures">插画列表</font>
+      <font style="color: #ff8200" id="illustrator">画师列表</font>
+      <font id="collection">最近收藏</font>
+    </div>
+    <div id="actions">
+      <font id="post">上传</font>
+      <font id="search">搜索</font>
+    </div>
+  </div>
+
+  <div class="illustrator_wrap">
+    <div class="headphoto">
+      <div>
+        <img src="../../img/pasoputi/head_photo.png" alt="">
+      </div>
+    </div>
+
+    <div class="infomation">
+      <div class="name" style="margin-top:20px">
+        <font>pasoputi</font>
+      </div>
+      <div class="signal">
+        <font>签名：</font>
+        <font>いつも評価、閲覧、ブックマークありがとうございます。</font>
+      </div>
+      <div class="style">
+        <font>风格特点：</font>
+        <font>风景与人物的融合,音乐,孤独</font>
+      </div>
+      <div class="SNS">
+        <font>社交网站：</font>
+        <font>
+          <a href="https://twitter.com/pasopuchi">https://twitter.com/pasopuchi</a>
+          &nbsp;&nbsp;&nbsp;
+          <a href="https://kaitojp1000.wixsite.com/website">https://kaitojp1000.wixsite.com/website</a>
+        </font>
+      </div>
+      <div class="reason">
+        <font>收藏理由：</font>
+        <font>他的作品在别人看来不仅仅只是风景与人物的结合，更让我能感受到每一幅作品背后渐起的音符 ，能感受到所谓的bgm。非常适合作为歌曲的封面图片。</font>
+      </div>
+      <div class="story">
+        <font>画师背后：</font>
+        <br>
+        <font>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"我常常觉得，我的孤独是与生俱来的。它像一朵沉静的花，独自开放在我的心海里，只有我能懂得它的美，这美让我骄傲，自由和独立。"<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;画师pasoputi的插画风格很统一，这也造就了他自己独特的风格。他的作品大多是以高中生为主的侧身画。画面中只有一个人物，都是只有侧身没有正脸。插画的画风朴素而不失色彩，主题鲜明，画面整体意境拿捏到位，给人一种孤独和与世隔绝的感觉。<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我收藏的这一部分只是他的一部分作品，主要选取的是关于享受孤独，生活中的压力等主题的插画——当然也有我自己的共鸣在里面（しふりさん的插画其实更给我这种感觉w）<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"对于孤独的人来说，耳机线像是输液管，听音乐的时候很像生病打点滴，是一个治愈的过程。喜欢一个人安静地呆着，喜欢一个人在静寂的夜晚，静静地怀念曾经的美好，有些伤感，有些遗憾，也许人生就是由一串串的遗憾拼接而成的，有了遗憾，有了忧伤，人生才不会色彩单调，索然无味，人生才有了触动心扉的思念，才有了牵动神经的回忆。潮湿的心情融入在这无边的夜色中，渐渐蔓延，蔓延到遥远的天边。"在欣赏他的插画之时，我的脑海中跳动着音符。
+        </font>
+      </div>
+    </div>
+    <hr>
+    <div class="name" style="margin:30px">
+      <font>目前收藏的这位画师的插画列表：</font>
+    </div>
+    <div class="picturelist" id="picturelist">
+      <img src="../../img/pasoputi/1.jpg" alt="">
+      <img src="../../img/pasoputi/2.jpg" alt="">
+      <img src="../../img/pasoputi/3.jpg" alt="">
+      <img src="../../img/pasoputi/4.jpg" alt="">
+      <img src="../../img/pasoputi/5.jpg" alt="">
+      <img src="../../img/pasoputi/6.jpg" alt="">
+      <img src="../../img/pasoputi/7.jpg" alt="">
+      <img src="../../img/pasoputi/8.jpg" alt="">
+    </div>
+  </div>
+</body>
+
+<script>
+
+  // header的各个导航按钮跳转页面
+  document.getElementById('home').addEventListener('click', function () {
+    window.location.href = "../home.html";
+  })
+  document.getElementById('pictures').addEventListener('click', function () {
+    window.location.href = "../pictures.html";
+  })
+  document.getElementById('illustrator').addEventListener('click', function () {
+    window.location.href = "../illustrator.html";
+  })
+  document.getElementById('collection').addEventListener('click', function () {
+    window.location.href = "../collection.html";
+  })
+  document.getElementById('post').addEventListener('click', function () {
+    window.location.href = "../post.html";
+  })
+  document.getElementById('search').addEventListener('click', function () {
+    window.location.href = "../search.html";
+  })
+
+  // 点击图片，进入相应的详情页
+  var imgArr = document.getElementById("picturelist").children
+  console.log(imgArr)
+  imgArr[0].addEventListener('click', function () {
+    window.open("../picturedetails/pasoputi/1.html");
+  })
+  imgArr[1].addEventListener('click', function () {
+    window.open("../picturedetails/pasoputi/2.html");
+  })
+  imgArr[2].addEventListener('click', function () {
+    window.open("../picturedetails/pasoputi/3.html");
+  })
+  imgArr[3].addEventListener('click', function () {
+    window.open("../picturedetails/pasoputi/4.html");
+  })
+  imgArr[4].addEventListener('click', function () {
+    window.open("../picturedetails/pasoputi/5.html");
+  })
+</script>
+
+</html>

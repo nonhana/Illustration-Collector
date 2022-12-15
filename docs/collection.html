@@ -5,184 +5,204 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>主页</title>
+	<link rel="stylesheet" type="text/css" href="../css/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="../css/htmleaf-demo.css">
+	<link rel="stylesheet" href="../css/style.css">
 	<link rel="stylesheet" href="../css/header.css">
 	<style type="text/css">
-		#outer {
-			/*设置长宽*/
-			width: 1220px;
-			height: 600px;
-			/*居中显示(应用margin的auto属性)*/
-			margin: 50px auto;
-			/*设置背景颜色*/
-			background-color: dimgray;
-			/*设置padding*/
-			padding: 10px 0;
-			/*因为其子元素开启了绝对定位，父元素开启相对定位，从而实现动画效果*/
+		#illustrator_list {
 			position: relative;
-			/* 裁剪溢出的内容 */
-			overflow: hidden;
+			width: 1300px;
+			margin: 30px auto;
+			background-color: #fff;
+			padding: 10px 0;
+			border-radius: 40px;
 		}
 
-		#imgList {
-			/*去除项目符号*/
-			list-style: none;
-			/*开启绝对定位，用于移动图片们(凡是要设置位置、移动的东西，都得开启绝对定位)*/
-			position: absolute;
-			/*设置偏移量*/
-			left: 0px;
+		#second_title {
+			font-family: SourceHanSansCN-Medium;
+			font-size: 30px;
+			font-weight: bold;
+			line-height: 30px;
+			color: #3d3d3d;
+			margin: 20px 0 20px 70px
 		}
 
-		#imgList li {
-			/*将竖着排的图片横过来*/
-			float: left;
-			/*设置左右的外间距，隔开元素与元素*/
-			margin: 0 10px;
+		.illustrator_item {
+			position: relative;
+			width: 420px;
+			height: 260px;
+			background-color: #a5a5a5;
+			border-radius: 10px;
+			margin-right: 10px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
 		}
 
-		#navDiv {
-			/* 开启绝对定位 */
-			position: absolute;
-			/* 设置底部的位置 */
-			bottom: 15px;
+		.illustrator_item>* {
+			margin-left: 10px;
 		}
 
-		#navDiv a {
-			/* 设置超链接浮动，横向排列 */
-			float: left;
-			/* 设置宽高 */
-			width: 15px;
-			height: 15px;
-			/* 设置颜色 */
-			background-color: white;
-			/* 设置左右外边距，元素与元素之间互不干扰 */
-			margin: 0 5px;
-			/* 设置透明度 */
-			opacity: 0.5;
+		.illustrator_item font {
+			font-family: SourceHanSansCN-Medium;
+			font-size: 20px;
+			font-weight: 500;
+			line-height: 28px;
+			color: #3d3d3d;
 		}
 
-		/* 设置鼠标移到按钮上的效果，hover相当于一个事件 */
-		#navDiv a:hover {
-			background-color: black;
+		.illustrator_item img {
+			cursor: pointer;
 		}
 	</style>
-	<script type="text/javascript" src="../js/tools.js"></script>
-	<script type="text/javascript">
-		window.onload = function () {
-			//根据图片个数修改imgList宽度
-			var imgList = document.getElementById("imgList");
-			//获取图片个数，修改样式
-			var imgArr = document.getElementsByTagName("img");
-			imgList.style.width = 1220 * imgArr.length + "px";
-			// 居中导航按钮
-			// 获取navDiv与outer
-			var navDiv = document.getElementById("navDiv");
-			var outer = document.getElementById("outer");
-			// 计算得出居中的值
-			navDiv.style.left = (outer.offsetWidth - navDiv.offsetWidth) / 2 + "px";
-			// 默认显示图片的索引
-			var index = 0;
-			// 获取所有的超链接(即最下面的四个按钮)
-			var allA = document.getElementsByTagName("a");
-			// 设置默认选中的效果
-			setA();
-			// 每隔4s，自动往后切换一次图片,切换到第一张时会很快
-			var timer = setInterval(function () {
-				var speed = 20;
-				if (index < (imgArr.length - 1)) {
-					index++;
-				} else {
-					index = 0;
-					speed = 20 * (imgArr.length - 1);
-				}
-				move(imgList, "left", -1220 * index, speed);
-				setA();
-			}, 4000)
-			/* 
-			 *按下不同的超链接，实现切换至不同的图片
-			 */
-			// 为所有的超链接绑定单击函数,采用for循环
-			for (var i = 0; i < allA.length; i++) {
-				// 为每一个超链接加标签：num属性
-				allA[i].num = i;
-				allA[i].onclick = function () {
-					// 删除上一个定时器
-					clearInterval(timer);
-					// 开启下一个定时器
-					timer = setInterval(function () {
-						var speed = 20;
-						if (index < (imgArr.length - 1)) {
-							index++;
-						} else {
-							index = 0;
-							speed = 20 * (imgArr.length - 1);
-						}
-						move(imgList, "left", -1220 * index, speed);
-						setA();
-					}, 4000)
-					// 获取index与this.num之间的差距gap，用来动态设置speed，使人机体验更好
-					var gap = index > this.num ? (index - this.num) : (this.num - index);
-					var speed = gap * 20;
-					// 获取点击的超链接的索引，并将其设置给index
-					index = this.num;
-					// 修改正在选中的超链接的背景颜色(选中了就变黑的)
-					setA();
-					// 使用animation.js中的move函数来实现动态的切换图片
-					move(imgList, "left", -1220 * index, speed);
-				}
-			}
-			// 创建方法用来设置选中的超链接，使其变黑
-			function setA() {
-				// 遍历所有的a，并将背景颜色设置为white
-				for (var i = 0; i < allA.length; i++) {
-					// 内联样式优先级最高，会妨碍接下来超链接样式的设置
-					allA[i].style.backgroundColor = "";
-				}
-				// 根据index将选中的超链接设置为黑色
-				allA[index].style.backgroundColor = "black";
-			}
-		}
-	</script>
 </head>
 
 <body>
 	<div id="mainheader">
 		<div id="mainlist">
-			<font>首页</font>
-			<font>插画列表</font>
-			<font>画师列表</font>
-			<font>最近收藏</font>
+			<font style="color: #ff8200" id="home">首页</font>
+			<font id="pictures">插画列表</font>
+			<font id="illustrator">画师列表</font>
+			<font id="collection">最近收藏</font>
 		</div>
 		<div id="actions">
-			<font>上传</font>
-			<font>搜索</font>
+			<font id="post">上传</font>
+			<font id="search">搜索</font>
 		</div>
 	</div>
-	<font id="title">目前展示作品画师：ムチリ</font>
-	<!--outer相当于一个box，是ul的基底，跟ps中的图层概念很像-->
-	<div id="outer">
-		<!-- ul为一个列表，一些需要整齐排列的元素都用这个(无论横向还是竖向)-->
-		<ul id="imgList">
-			<li><img src="../图片/gray01.jpg"></li>
-			<li><img src="../图片/gray02.jpg"></li>
-			<li><img src="../图片/gray03.jpg"></li>
-			<li><img src="../图片/gray04.jpg"></li>
-			<li><img src="../图片/gray05.jpg"></li>
-			<li><img src="../图片/双狼1.jpg"></li>
-			<li><img src="../图片/双狼2.jpg"></li>
-			<li><img src="../图片/双狼3.jpg"></li>
-		</ul>
-		<!-- 创建导航按钮，用户点击可以切换图片 -->
-		<div id="navDiv">
-			<a href="javascript:;"></a>
-			<a href="javascript:;"></a>
-			<a href="javascript:;"></a>
-			<a href="javascript:;"></a>
-			<a href="javascript:;"></a>
-			<a href="javascript:;"></a>
-			<a href="javascript:;"></a>
-			<a href="javascript:;"></a>
+
+	<div class="htmleaf-container">
+		<div id="wrapper">
+			<div id="slider-wrap">
+				<ul id="slider">
+					<li>
+						<i class="fa fa-image">
+							<img src="../img/ちふり/1.jpg" alt="">
+						</i>
+					</li>
+
+					<li>
+						<i class="fa fa-gears">
+							<img src="../img/ちふり/2.jpg" alt="">
+						</i>
+					</li>
+
+					<li>
+						<i class="fa fa-sliders">
+							<img src="../img/ちふり/3.jpg" alt="">
+						</i>
+					</li>
+
+					<li>
+						<i class="fa fa-code">
+							<img src="../img/ちふり/4.jpg" alt="">
+						</i>
+					</li>
+
+					<li>
+						<i class="fa fa-microphone-slash">
+							<img src="../img/ちふり/5.jpg" alt="">
+						</i>
+					</li>
+
+					<li>
+						<i class="fa fa-microphone-slash">
+							<img src="../img/ちふり/6.jpg" alt="">
+						</i>
+					</li>
+
+					<li>
+						<i class="fa fa-microphone-slash">
+							<img src="../img/ちふり/7.jpg" alt="">
+						</i>
+					</li>
+
+					<li>
+						<i class="fa fa-microphone-slash">
+							<img src="../img/ちふり/8.jpg" alt="">
+						</i>
+					</li>
+				</ul>
+
+				<div class="btns" id="next"><i class="fa fa-arrow-right"></i></div>
+				<div class="btns" id="previous"><i class="fa fa-arrow-left"></i></div>
+				<div id="counter"></div>
+
+				<div id="pagination-wrap">
+					<ul>
+					</ul>
+				</div>
+				<!--controls-->
+
+			</div>
+		</div>
+	</div>
+
+	<div id="illustrator_list">
+		<div id="second_title">
+			<font>目前收藏画师</font>
+		</div>
+		<div style="display: flex;margin: 10px 0 10px 20px ;">
+			<div class="illustrator_item">
+				<div>
+					<font>ちふり</font>
+					<img style="width: 400px;height: 200px;border-radius: 10px;" src="/img/ちふり/1.jpg" alt="">
+				</div>
+			</div>
+			<div class="illustrator_item">
+				<div>
+					<font>しおん</font>
+					<img style="width: 400px;height: 200px;border-radius: 10px;" src="/img/しおん/1.jpg" alt="">
+				</div>
+			</div>
+			<div class="illustrator_item">
+				<div>
+					<font>pasoputi</font>
+					<img style="width: 400px;height: 200px;border-radius: 10px;" src="/img/pasoputi/7.jpg" alt="">
+				</div>
+			</div>
 		</div>
 	</div>
 </body>
+<script type="text/javascript" src="../js/tools.js"></script>
+<script type="text/javascript" src="../js/changepictures.js"></script>
+<script src="http://cdn.bootcss.com/jquery/1.11.0/jquery.min.js" type="text/javascript"></script>
+<script>window.jQuery || document.write('<script src="js/jquery-1.11.0.min.js"><\/script>')</script>
+<script type="text/javascript" src="../js/slide.js"></script>
+<script>
+	// header的各个导航按钮跳转页面
+	document.getElementById('home').addEventListener('click', function () {
+		window.location.href = "home.html";
+	})
+	document.getElementById('pictures').addEventListener('click', function () {
+		window.location.href = "pictures.html";
+	})
+	document.getElementById('illustrator').addEventListener('click', function () {
+		window.location.href = "illustrator.html";
+	})
+	document.getElementById('collection').addEventListener('click', function () {
+		window.location.href = "collection.html";
+	})
+	document.getElementById('post').addEventListener('click', function () {
+		window.location.href = "post.html";
+	})
+	document.getElementById('search').addEventListener('click', function () {
+		window.location.href = "search.html";
+	})
+
+	// 绑定图片点击事件
+	var illustrator_list = document.getElementsByClassName('illustrator_item');
+	console.log(illustrator_list);
+	illustrator_list[0].addEventListener('click', function () {
+		window.open("illustratordetails/ちふり.html");
+	})
+	illustrator_list[1].addEventListener('click', function () {
+		window.open("illustratordetails/しおん.html");
+	})
+	illustrator_list[2].addEventListener('click', function () {
+		window.open("illustratordetails/pasoputi.html");
+	})
+</script>
 
 </html>
