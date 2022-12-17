@@ -1,0 +1,129 @@
+#login-window {
+  padding: 20px;
+  margin: 200px auto;
+  width: 300px;
+  height: 300px;
+  background-color: #fff;
+  border-radius: 50px;
+}
+
+#register-window {
+  padding: 20px;
+  margin: 200px auto;
+  width: 300px;
+  height: 300px;
+  background-color: #fff;
+  border-radius: 50px;
+}
+
+.title {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.title font {
+  font-family: SourceHanSansCN-Medium;
+  font-size: 24px;
+  font-weight: 500;
+  color: #3d3d3d;
+}
+
+.form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.form font {
+  font-family: SourceHanSansCN-Medium;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 17px;
+  color: #3d3d3d;
+}
+
+.form input {
+  width: 200px;
+  height: 40px;
+  border-radius: 10px;
+  border: 0.5px #ff8200 solid;
+  background-color: #f5f5f5;
+  margin: 0 0 0 20px
+}
+
+.register-button {
+  width: 100%;
+  margin: 20px 0 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.register-button font {
+  cursor: pointer;
+}
+
+.register-button font:hover {
+  color: #ff8200;
+}
+
+#submit {
+  width: 100%;
+  margin: 30px 0 0 0;
+  display: flex;
+  justify-content: center;
+}
+
+#submit div {
+  width: 70px;
+  height: 40px;
+  background-color: #ff820088;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+#submit div:hover {
+  background-color: #ff8200;
+}
+
+#submit div font {
+  font-family: SourceHanSansCN-Medium;
+  font-size: 15px;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+#register {
+  width: 100%;
+  margin: 30px 0 0 0;
+  display: flex;
+  justify-content: center;
+}
+
+#register div {
+  width: 70px;
+  height: 40px;
+  background-color: #ff820088;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+#register div:hover {
+  background-color: #ff8200;
+}
+
+#register div font {
+  font-family: SourceHanSansCN-Medium;
+  font-size: 15px;
+  font-weight: 500;
+  color: #ffffff;
+}

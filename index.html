@@ -5,7 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>登录</title>
-
+	<link rel="stylesheet" href="css/loginWindow.css">
 	<style>
 		* {
 			margin: 0;
@@ -14,87 +14,13 @@
 
 		body {
 			background-image: url(/img/ちふり/1.jpg);
-		}
-
-		.login-window {
-			padding: 20px;
-			margin: 200px auto;
-			width: 300px;
-			height: 300px;
-			background-color: #fff;
-			border-radius: 50px;
-		}
-
-		.title {
-			width: 100%;
-			display: flex;
-			justify-content: center;
-		}
-
-		.title font {
-			font-family: SourceHanSansCN-Medium;
-			font-size: 24px;
-			font-weight: 500;
-			color: #3d3d3d;
-		}
-
-		.form {
-			width: 100%;
-			display: flex;
-			justify-content: center;
-		}
-
-		.form font {
-			font-family: SourceHanSansCN-Medium;
-			font-size: 18px;
-			font-weight: 500;
-			line-height: 17px;
-			color: #3d3d3d;
-		}
-
-		.form input {
-			width: 200px;
-			height: 40px;
-			border-radius: 10px;
-			border: 0.5px #ff8200 solid;
-			background-color: #f5f5f5;
-			margin: 0 0 0 20px
-		}
-
-		#submit {
-			width: 100%;
-			margin: 30px 0 0 0;
-			display: flex;
-			justify-content: center;
-		}
-
-		#submit div {
-			width: 70px;
-			height: 40px;
-			background-color: #ff820088;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			border-radius: 20px;
-			cursor: pointer;
-			transition: all 0.3s;
-		}
-
-		#submit div:hover {
-			background-color: #ff8200;
-		}
-
-		#submit div font {
-			font-family: SourceHanSansCN-Medium;
-			font-size: 15px;
-			font-weight: 500;
-			color: #ffffff;
+			background-size: cover;
 		}
 	</style>
 </head>
 
 <body>
-	<div class="login-window">
+	<div id="login-window">
 		<div class="title">
 			<font>登录</font>
 		</div>
@@ -110,67 +36,47 @@
 				</div>
 			</div>
 		</div>
+		<div class="register-button">
+			<div>
+				<font>还未注册？点击此处进行注册</font>
+			</div>
+		</div>
 		<div id="submit">
 			<div>
 				<font>登录</font>
 			</div>
 		</div>
 	</div>
+
+	<div id="register-window">
+		<div class="title">
+			<font>注册</font>
+		</div>
+		<div class="form">
+			<div style="margin:40px 0 0 0 ;">
+				<div>
+					<font>账号</font>
+					<input type="text" placeholder="请设置您的账号">
+				</div>
+				<div style="margin:20px 0 0 0">
+					<font>密码</font>
+					<input type="password" placeholder="请设置您的密码">
+				</div>
+			</div>
+		</div>
+		<div class="register-button">
+			<div>
+				<font>返回</font>
+			</div>
+		</div>
+		<div id="register">
+			<div>
+				<font>注册</font>
+			</div>
+		</div>
+	</div>
 </body>
 
-<script>
-	var inputs = document.querySelectorAll("input");  //获取元素
-	var submit = document.getElementById("submit");
-
-	submit.onclick = function () {
-		for (var i = 0; i < inputs.length - 1; i++) {
-			if (inputs[i].value == "") {
-				alert("账号/密码未填好！");
-				return false;
-			}
-		}
-		const users = {
-			username: inputs[0].value,
-			password: inputs[1].value,
-		}
-		let flag = 0;
-		// 如果是新用户，将用户名+密码写入本地存储；如果是老用户，则判断密码是否正确！
-		if (localStorage.getItem("user_list")) {
-			for (i = 0; i < JSON.parse(localStorage.getItem("user_list")).length; i++) {
-				if (JSON.parse(localStorage.getItem("user_list"))[i].username == users.username) {
-					flag = 1;
-					// 进行判断
-					if (JSON.parse(localStorage.getItem("user_list"))[i].password == users.password) {
-						alert("欢迎回来！");
-						window.open("../docs/home.html");
-					} else {
-						alert("密码输入错误，请重新输入！");
-					}
-				}
-			}
-		} else {
-			// 如果未注册，则当这次是注册
-			flag = 1;
-			let user_list = [];
-			user_list.push(users);
-			localStorage.setItem("user_list", JSON.stringify(user_list));
-			alert("检测到您输入的账号未注册，系统帮您自动注册！");
-			window.open("../docs/home.html");
-		}
-		if (flag == 0) {
-			// 如果未注册，则当这次是注册
-			let user_list = [];
-			if (localStorage.getItem("user_list")) {
-				for (i = 0; i < JSON.parse(localStorage.getItem("user_list")).length; i++) {
-					user_list.push(JSON.parse(localStorage.getItem("user_list"))[i])
-				}
-			}
-			user_list.push(users);
-			localStorage.setItem("user_list", JSON.stringify(user_list));
-			alert("检测到您输入的账号未注册，系统帮您自动注册！");
-			window.open("../docs/home.html");
-		}
-	}
-</script>
+<script src="js/loginWindow.js"></script>
 
 </html>
