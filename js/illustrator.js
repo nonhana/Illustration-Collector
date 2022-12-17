@@ -6,6 +6,12 @@ if (localStorage.getItem("illustratorlist")) {
     localillustratorlist.push(JSON.parse(localStorage.getItem("illustratorlist"))[i]);
   }
 }
+var localpicturelist = [];
+if (localStorage.getItem("picturelist")) {
+  for (var i = 0; i < JSON.parse(localStorage.getItem("picturelist")).length; i++) {
+    localpicturelist.push(JSON.parse(localStorage.getItem("picturelist"))[i]);
+  }
+}
 for (var i = 0; i < localillustratorlist.length; i++) {
   var str = "";
   str = "<hr>" + "<div id='illustratoritem'>" +
@@ -30,12 +36,15 @@ for (var i = 0; i < localillustratorlist.length; i++) {
     "</div>" +
     "</div >" +
     "</div >" +
-    "<div id='noList'>" +
+    "<div class='uploadpicturelist'>" +
+    "</div>" +
+    "<div class='noList'>" +
     "<font>" +
     "暂未收藏该画师的相关插画哦，快去添加吧！" + "</font>" +
     "</div>"
   illustratorlist.innerHTML += str
 }
+
 var headArr = [];
 for (var i = 0; i < document.getElementsByClassName("headphoto").length; i++) {
   headArr.push(document.getElementsByClassName("headphoto")[i].children);
@@ -48,6 +57,28 @@ var aArr = document.getElementsByClassName("uploaduser");
 for (var i = 0; i < aArr.length; i++) {
   aArr[i].innerHTML = localillustratorlist[i].illustrator_SNS;
   aArr[i].href = localillustratorlist[i].illustrator_SNS;
+}
+
+var uploadpicturelist = document.getElementsByClassName("uploadpicturelist");
+var noList = document.getElementsByClassName("noList");
+var rangepictures = [];
+for (var i = 0; i < uploadpicturelist.length; i++) {
+  for (var j = 0; j < localpicturelist.length; j++) {
+    if (localpicturelist[j].picture_creator == localillustratorlist[i].illustrator_name) {
+      noList[i].style.display = 'none';
+      var str = "";
+      str = "<div>" +
+        "<img class='uploadpictureitem' src='' alt=''>" +
+        "</div>"
+      rangepictures.push(localpicturelist[j]);
+      uploadpicturelist[i].innerHTML += str;
+    }
+  }
+}
+for (var i = 0; i < uploadpicturelist.length; i++) {
+  for (var j = 0; j < uploadpicturelist[i].getElementsByClassName("uploadpictureitem").length; j++) {
+    uploadpicturelist[i].getElementsByClassName("uploadpictureitem")[j].src = rangepictures.shift().picture_file
+  }
 }
 
 // 点击图片，进入相应的详情页

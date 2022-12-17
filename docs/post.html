@@ -6,119 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>上传</title>
 	<link rel="stylesheet" href="../css/header.css">
-	<style type="text/css">
-		.fileItem_display {
-			width: 200px;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-		}
-
-		.fileItem_display img {
-			width: 200px;
-		}
-
-		.inputbox {
-			width: 300px;
-			height: 40px;
-			border-radius: 10px;
-			padding: 0 10px;
-			border: 0.5px #ff8200 solid;
-			background-color: #f5f5f5;
-		}
-
-		#illustrator_postform {
-			position: relative;
-			width: 800px;
-			background-color: #fff;
-			margin: 30px auto 0;
-			border-radius: 10px;
-			box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.3);
-			padding: 20px 0 20px 0;
-		}
-
-		#illustrator_postform>* {
-			width: 500px;
-			margin-top: 20px;
-			margin-left: 100px;
-			display: flex;
-			align-items: center;
-			justify-content: space-between;
-		}
-
-		#illustrator_postform font {
-			font-family: SourceHanSansCN-Medium;
-			font-size: 16px;
-			font-weight: 500;
-			line-height: 16px;
-		}
-
-		#picture_postform {
-			position: relative;
-			width: 800px;
-			background-color: #fff;
-			margin: 30px auto 0;
-			border-radius: 10px;
-			box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.3);
-			padding: 20px 0 20px 0;
-		}
-
-		#picture_postform>* {
-			width: 500px;
-			margin-top: 20px;
-			margin-left: 100px;
-			display: flex;
-			align-items: center;
-			justify-content: space-between;
-		}
-
-		#picture_postform font {
-			font-family: SourceHanSansCN-Medium;
-			font-size: 16px;
-			font-weight: 500;
-			line-height: 16px;
-		}
-
-		#submitillustrator {
-			margin-left: 600px;
-			width: 70px;
-			height: 40px;
-			background-color: #ff8200;
-			border-radius: 20px;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			cursor: pointer;
-		}
-
-		#submitillustrator font {
-			font-family: SourceHanSansCN-Medium;
-			font-size: 18px;
-			font-weight: 500;
-			line-height: 17px;
-			color: #fff;
-		}
-
-		#submitpicture {
-			margin-left: 600px;
-			width: 70px;
-			height: 40px;
-			background-color: #ff8200;
-			border-radius: 20px;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			cursor: pointer;
-		}
-
-		#submitpicture font {
-			font-family: SourceHanSansCN-Medium;
-			font-size: 18px;
-			font-weight: 500;
-			line-height: 17px;
-			color: #fff;
-		}
-	</style>
+	<link rel="stylesheet" href="../css/post.css">
 </head>
 
 <body>
@@ -159,7 +47,8 @@
 		</div>
 		<div id="illustrator_story">
 			<font>该画师故事：</font>
-			<input class="inputbox" type="text" placeholder="每一位画师的背后都会有一段发展史，查到了就写点吧">
+			<textarea style="resize:vertical;padding: 10px 10px 0 10px;" class="inputbox"
+				placeholder="每一位画师的背后都会有一段发展史，查到了就写点吧"></textarea>
 		</div>
 		<div id="illustrator_headpicture">
 			<font>上传画师头像：</font>
@@ -197,7 +86,8 @@
 		</div>
 		<div id="picture_reason">
 			<font>收藏该插画理由：</font>
-			<input class="inputbox" type="text" placeholder="有什么特殊的感想就写下来吧">
+			<textarea style="resize:vertical;padding: 10px 10px 0 10px;" class="inputbox"
+				placeholder="有什么特殊的感想就写下来吧"></textarea>
 		</div>
 		<div id="picture_works">
 			<font>上传插画文件：</font>

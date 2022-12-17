@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>插画列表</title>
+  <link rel="stylesheet" href="../../../css/header.css">
+  <link rel="stylesheet" href="../../../css/picturedetails.css">
+  <link rel="stylesheet" href="../../../css/comments.css">
+</head>
+
+<body>
+  <div id="mainheader">
+    <div id="mainlist">
+      <font id="home">首页</font>
+      <font style="color: #ff8200" id="pictures">插画列表</font>
+      <font id="illustrator">画师列表</font>
+      <font id="collection">最近收藏</font>
+    </div>
+    <div id="actions">
+      <font id="post">上传</font>
+      <font id="search">搜索</font>
+    </div>
+  </div>
+
+  <div id="container">
+    <div id="picturemain">
+      <img id="imgshow" src="../../../img/pasoputi/1.jpg" alt="">
+    </div>
+
+    <div id="picturedetails">
+      <div>
+        <font class="title">茜色に沈む</font>
+      </div>
+      <div>
+        <font class="labels">
+          标签：
+          <span>#男孩子</span>
+          <span>#夕阳</span>
+          <span>#风景</span>
+        </font>
+      </div>
+      <div>
+        <font class="postername">画师名称：<span>pasoputi</span></font>
+      </div>
+      <div>
+        <font class="originalurl">原图地址：<span>https://www.pixiv.net/artworks/98581261</span></font>
+      </div>
+      <div>
+        <font class="date">收藏时间：<span>2021-03-28</span></font>
+      </div>
+      <div>
+        <font class="details">我也希望站在这样的夕阳之下吞吐音符。</font>
+      </div>
+    </div>
+  </div>
+
+  <div class="comments">
+    <div class="commentstitle">
+      <font>评论列表</font>
+    </div>
+    <div id="up">
+      <input type="text" placeholder="请输入您的姓名">
+      <input type="text" placeholder="请输入您的性别">
+      <input type="text" placeholder="请输入您的年龄">
+      <input type="text" placeholder="请输入您的评论内容">
+      <input type="button" value="添加">
+    </div>
+
+    <table id="tab">
+      <tr>
+        <td>姓名</td>
+        <td>性别</td>
+        <td>年龄</td>
+        <td>评论</td>
+        <td>操作</td>
+      </tr>
+    </table>
+
+  </div>
+</body>
+
+<script>
+  // header的各个导航按钮跳转页面
+  document.getElementById('home').addEventListener('click', function () {
+    window.location.href = "../../home.html";
+  })
+  document.getElementById('pictures').addEventListener('click', function () {
+    window.location.href = "../../pictures.html";
+  })
+  document.getElementById('illustrator').addEventListener('click', function () {
+    window.location.href = "../../illustrator.html";
+  })
+  document.getElementById('collection').addEventListener('click', function () {
+    window.location.href = "../../collection.html";
+  })
+  document.getElementById('post').addEventListener('click', function () {
+    window.location.href = "../../post.html";
+  })
+  document.getElementById('search').addEventListener('click', function () {
+    window.location.href = "../../search.html";
+  })
+</script>
+
+<script src="../../../js/comments.js"></script>
+
+</html>

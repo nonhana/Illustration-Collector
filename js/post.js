@@ -12,7 +12,11 @@ document.querySelector('#picture_fileItem').onchange = function () {
 
 // 点击提交按钮时，获取提交的表单
 document.getElementById('submitillustrator').addEventListener('click', function () {
-  var illustrator_form = document.getElementById('illustrator_postform').getElementsByTagName('input');
+  var illustrator_form = [];
+  for (var i = 0; i < document.getElementById('illustrator_postform').getElementsByClassName('inputbox').length; i++) {
+    illustrator_form.push(document.getElementById('illustrator_postform').getElementsByClassName('inputbox')[i]);
+  }
+  illustrator_form.push(document.getElementById("illustrator_fileItem"))
   var submit_illustrator_form = {
     illustrator_id: 1,
     illustrator_name: "",
@@ -61,7 +65,6 @@ document.getElementById('submitillustrator').addEventListener('click', function 
       }
       illustrator_list.push(submit_illustrator_form);
       localStorage.setItem("illustratorlist", JSON.stringify(illustrator_list));
-      alert("上传成功")
       // 成功后重置表单
       submit_illustrator_form = {
         illustrator_id: 1,
@@ -73,6 +76,8 @@ document.getElementById('submitillustrator').addEventListener('click', function 
         illustrator_story: "",
         illustrator_head_photo: "",
       }
+      alert("上传成功")
+      window.location.reload();
     }
   } else {
     alert("添加画师的资料尚未填充完整！")
@@ -81,7 +86,12 @@ document.getElementById('submitillustrator').addEventListener('click', function 
 
 // 上传插画
 document.getElementById('submitpicture').addEventListener('click', function () {
-  var picture_form = document.getElementById('picture_postform').getElementsByTagName('input');
+  var picture_form = [];
+  for (var i = 0; i < document.getElementById('picture_postform').getElementsByClassName('inputbox').length; i++) {
+    picture_form.push(document.getElementById('picture_postform').getElementsByClassName('inputbox')[i]);
+  }
+  picture_form.push(document.getElementById("picture_fileItem"))
+  console.log(picture_form);
   var submit_picture_form = {
     picture_id: 1,
     picture_name: "",
@@ -130,18 +140,13 @@ document.getElementById('submitpicture').addEventListener('click', function () {
       }
       picture_list.push(submit_picture_form);
       localStorage.setItem("picturelist", JSON.stringify(picture_list));
-      alert("上传成功")
       // 成功后重置表单
-      submit_picture_form = {
-        picture_id: 1,
-        picture_name: "",
-        picture_labels: "",
-        picture_creator: "",
-        picture_origin: "",
-        picture_time: "",
-        picture_reason: "",
-        picture_file: "",
+      for (var i = 0; i < picture_form.length - 1; i++) {
+        picture_form[i].value = ""
       }
+      picture_form[6].files = "";
+      alert("上传成功")
+      window.location.reload();
     }
   } else {
     alert("添加插画的资料尚未填充完整！")

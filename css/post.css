@@ -1,0 +1,111 @@
+.fileItem_display {
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fileItem_display img {
+  width: 200px;
+}
+
+.inputbox {
+  width: 300px;
+  height: 40px;
+  border-radius: 10px;
+  padding: 0 10px;
+  border: 0.5px #ff8200 solid;
+  background-color: #f5f5f5;
+}
+
+#illustrator_postform {
+  position: relative;
+  width: 800px;
+  background-color: #fff;
+  margin: 30px auto 0;
+  border-radius: 10px;
+  box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.3);
+  padding: 20px 0 20px 0;
+}
+
+#illustrator_postform>* {
+  width: 500px;
+  margin-top: 20px;
+  margin-left: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#illustrator_postform font {
+  font-family: SourceHanSansCN-Medium;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 16px;
+}
+
+#picture_postform {
+  position: relative;
+  width: 800px;
+  background-color: #fff;
+  margin: 30px auto 0;
+  border-radius: 10px;
+  box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.3);
+  padding: 20px 0 20px 0;
+}
+
+#picture_postform>* {
+  width: 500px;
+  margin-top: 20px;
+  margin-left: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#picture_postform font {
+  font-family: SourceHanSansCN-Medium;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 16px;
+}
+
+#submitillustrator {
+  margin-left: 600px;
+  width: 70px;
+  height: 40px;
+  background-color: #ff8200;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+#submitillustrator font {
+  font-family: SourceHanSansCN-Medium;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 17px;
+  color: #fff;
+}
+
+#submitpicture {
+  margin-left: 600px;
+  width: 70px;
+  height: 40px;
+  background-color: #ff8200;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+#submitpicture font {
+  font-family: SourceHanSansCN-Medium;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 17px;
+  color: #fff;
+}
