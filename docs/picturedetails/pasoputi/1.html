@@ -16,11 +16,11 @@
       <font id="home">首页</font>
       <font style="color: #ff8200" id="pictures">插画列表</font>
       <font id="illustrator">画师列表</font>
-      <font id="collection">最近收藏</font>
+      
     </div>
     <div id="actions">
       <font id="post">上传</font>
-      <font id="search">搜索</font>
+      
     </div>
   </div>
 
@@ -65,7 +65,7 @@
       <input type="text" placeholder="请输入您的性别">
       <input type="text" placeholder="请输入您的年龄">
       <input type="text" placeholder="请输入您的评论内容">
-      <input type="button" value="添加">
+      <button id="comment-submit">添加</button>
     </div>
 
     <table id="tab">
@@ -92,14 +92,8 @@
   document.getElementById('illustrator').addEventListener('click', function () {
     window.location.href = "../../illustrator.html";
   })
-  document.getElementById('collection').addEventListener('click', function () {
-    window.location.href = "../../collection.html";
-  })
   document.getElementById('post').addEventListener('click', function () {
     window.location.href = "../../post.html";
-  })
-  document.getElementById('search').addEventListener('click', function () {
-    window.location.href = "../../search.html";
   })
 </script>
 
